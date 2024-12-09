@@ -4,6 +4,8 @@ import com.mynt.isbak_movie.model.Genre;
 import com.mynt.isbak_movie.model.Movie;
 import com.mynt.isbak_movie.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -28,6 +30,12 @@ public class MovieServiceImpl implements MovieService {
     @Override
     public List<Movie> findAllByOrderByYearReleasedAsc() {
         return movieRepository.findAllByOrderByYearReleasedAsc();
+    }
+
+    @Override
+    public String getSecurity(){
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        return "" + auth;
     }
 
 //    @Override

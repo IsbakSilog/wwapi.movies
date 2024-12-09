@@ -10,8 +10,9 @@ public interface MovieService {
     List<Movie> getMoviesByYearReleased (int yearReleased);
     List<Movie> findAllByOrderByYearReleasedAsc();
    //List<Movie> getByGenreAndIsSequel(Genre genre, boolean isSequel);
+    String getSecurity();
 
 
 
-    }
+}
 
